@@ -1,21 +1,25 @@
-import React from 'react';
+import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from './pages/About';
-import Home from './pages/Home';
-import News from './pages/News';
-import "./styles/index.scss";
+import Home from './components/Home';
+import Contact from './components/Contact';
+import About from './components/About';
+import Products from './components/Products';
+import Header from './components/Header';
 
-const App = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/new" element={<News />}/>
-                <Route path="/about" element={<About />}/>
-                <Route path="*" element='erreur 404'/>
-            </Routes>
-        </BrowserRouter>
-    );
-};
+function App() {
+  return (
+    <>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route to="/" element={<Home />}/>
+          <Route to="/contact" element={<Contact />}/>
+          <Route to="/about" element={<About />}/>
+          <Route to="/products" element={<Products />}/>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+}
 
 export default App;
